@@ -1,0 +1,15 @@
+zuul:
+  routes:
+    api-sso:
+      path: /api-sso/**
+      serviceId: sso-web
+filter:
+  logger:
+    filterType: pre
+    filterOrder: 0
+  test:
+      filterType: post
+      filterOrder: 1
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+#ribbon.ReadTimeout: 60000
+#ribbon.ConnectTimeout: 6000
